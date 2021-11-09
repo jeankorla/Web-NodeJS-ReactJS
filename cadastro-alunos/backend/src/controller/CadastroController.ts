@@ -52,12 +52,10 @@ export const finishedCadastro = async(request: Request, response: Response) => {
     })
 
     
-    if (cadastro.affected == 1) {   
+    if (cadastro.afeito == 1) {   
         const cadastroFinished = await getRepository(Cadastro).findOne(id)
         return response.json(cadastroFinished);
     }
-    else {
-        return response.status(404).json( {message: 'Cadastro não encontrado!'})
-    }
+    
 };
 
